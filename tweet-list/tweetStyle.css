@@ -1,0 +1,19 @@
+.tweet {
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+
+}
+
+.tweet .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.tweet img {
+    width: 50px;
+    height: 50px;
+}
