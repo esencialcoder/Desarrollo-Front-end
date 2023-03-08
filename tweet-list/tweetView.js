@@ -17,3 +17,7 @@ export function buildTweetView(tweet) {
 export function buildSpinnerView() {
   return `<div class="spinner"><div></div><div></div><div></div>`;
 }
+
+export function buildErrorLoadingTweets() {
+  return `<p class = "load-error">Ha ocurrido un error al cargar los tweets. Inténtelo de nuevo más tarde</p>`;
+}
