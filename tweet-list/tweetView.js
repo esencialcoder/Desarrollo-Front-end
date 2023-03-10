@@ -21,3 +21,7 @@ export function buildSpinnerView() {
 export function buildErrorLoadingTweets() {
   return `<p class = "load-error">Ha ocurrido un error al cargar los tweets. Inténtelo de nuevo más tarde</p>`;
 }
+
+export function buildEmpyTweetList() {
+  return `<p>No hay resultados disponibles</p>`;
+}
