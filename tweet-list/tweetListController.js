@@ -3,26 +3,29 @@ import {
   buildTweetView,
   buildSpinnerView,
   buildErrorLoadingTweets,
-  buildEmpyTweetList
+  buildEmpyTweetList,
 } from "./tweetView.js";
 
-export async function tweetListController(tweetListElement) {
+export async function tweetListController(tweetListElement, showMessage) {
   tweetListElement.innerHTML = buildSpinnerView();
 
   let tweets = [];
 
   try {
     tweets = await getTweets();
-
-    hideSpinner(tweetListElement);
-
+    showMessage('Los tweets se cargaron correctamente')
+    
     if (tweets.length > 0) {
       drawTweets(tweets, tweetListElement);
     } else {
       showEmptyMessage(tweetListElement);
     }
   } catch (error) {
-    tweetListElement.innerHTML = buildErrorLoadingTweets();
+    // tweetListElement.innerHTML = buildErrorLoadingTweets();
+    showMessage('No hemos podido cargar los tweets');
+    
+  } finally {
+    hideSpinner(tweetListElement);
   }
 }
 

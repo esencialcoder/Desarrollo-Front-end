@@ -1,13 +1,14 @@
+import { notificationController } from "./notifications/notificationController.js";
 import { tweetListController } from "./tweet-list/tweetListController.js";
 
 const tweetListElement = document.querySelector('.tweet-list');
-// const loadTweetsButtonElement = document.querySelector('#loadTweetsButton');
+const notificationsElement = document.querySelector('.notifications');
 
-// loadTweetsButtonElement.addEventListener('click', () => {
-// });
-tweetListController(tweetListElement);
+const showMessage = notificationController(notificationsElement);
 
-// tweetListController(tweetListElement);
+tweetListController(tweetListElement, showMessage);
+
+
 
 
 

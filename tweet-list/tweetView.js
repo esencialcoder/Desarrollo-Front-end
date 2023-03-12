@@ -25,3 +25,4 @@ export function buildErrorLoadingTweets() {
 export function buildEmpyTweetList() {
   return `<p>No hay resultados disponibles</p>`;
 }
+
