@@ -18,7 +18,7 @@ export function signupController(signupElement) {
       return false;
     }
 
-    return true
+    return true;
   }
 
   function isEmailValid(signupElement) {
@@ -28,13 +28,14 @@ export function signupController(signupElement) {
 
     if (passwordElement.value !== passwordConfirmElement.value) {
       alert("Las contraseñas no son iguales");
-      return false
+      return false;
     }
 
     return true;
   }
+  
+  function isFormValid(signupElement) {
+    return isEmailValid(signupElement) && isPasswordValid(signupElement);
+  }
 }
 
-function isFormValid(signupElement) {
-  return isEmailValid(signupElement) && isPasswordValid(signupElement);
-}
