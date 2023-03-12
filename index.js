@@ -5,8 +5,14 @@ const tweetListElement = document.querySelector('.tweet-list');
 const notificationsElement = document.querySelector('.notifications');
 
 const showMessage = notificationController(notificationsElement);
+tweetListController(tweetListElement);
 
-tweetListController(tweetListElement, showMessage);
+tweetListElement.addEventListener('newNotification', (event) => {
+    console.log('He recibido el evento!!!!', event.detail.message);
+    showMessage(event.detail.message)
+
+})
+
 
 
 
