@@ -12,11 +12,11 @@ export async function createUser(email, password) {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  }); 
 
-  const data = await response.json();
+  if (!response.ok) {
+    throw new Error('Error al crear el usuario')
+  }
 
-  return data;
-
-  // gestionar la respuesta
+   // gestionar la respuesta
 }

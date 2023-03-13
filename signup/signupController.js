@@ -17,7 +17,7 @@ export function signupController(signupElement) {
         await createUser(emailElement.value, passwordElement.value)
         alert('Usuario creado correctamente')
       } catch (error) {
-        alert('No ha podido crearse el usuario')
+        alert(error.message)
       }
     }
   });
