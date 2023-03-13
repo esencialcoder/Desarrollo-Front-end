@@ -1,4 +1,5 @@
 import { buildNotificationView } from "./notificationView.js";
+import { pubSub } from "../pubSub.js";
 
 export function notificationController(notificationsElement) {
   function showMessage(message) {
@@ -7,5 +8,9 @@ export function notificationController(notificationsElement) {
       notificationsElement.innerHTML = ''
     }, 5000);
   }
+
+  pubSub.subscribe(pubSub.TOPICS.SHOW_NOTIFICATION, (message) => {
+    showMessage(message)
+  } )
   return showMessage;
 }
